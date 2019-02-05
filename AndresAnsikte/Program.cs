@@ -26,7 +26,7 @@ namespace AndresAnsikte
                         ShowKillers();
                         break;
                 }
-                Console.WriteLine("1. Add killer\n2. Show all killers\n3. Exit");
+                Console.WriteLine("1. Add killer\n2. Show all killers\n3. Exit ");
                 Console.Write("Choose function by inserting corresponding number: ");
                 
                 choice = Convert.ToInt32(Console.ReadLine());
