@@ -52,7 +52,7 @@ namespace AndresAnsikte
             Console.Write("Enter name of prison: ");
             string jail = Console.ReadLine();
             killers.Add(new Killer(name, years, jail));
-            Console.WriteLine();
+            Console.WriteLine("");
            
         }
     }
