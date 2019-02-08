@@ -53,6 +53,7 @@ namespace AndresAnsikte
             string jail = Console.ReadLine();
             killers.Add(new Killer(name, years, jail));
             Console.WriteLine("");
+            Console.Write("ahahaha");
            
         }
     }
