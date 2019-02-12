@@ -8,7 +8,6 @@ namespace AndresAnsikte
 {
     class Program
     {
-        public static List<Killer> killers = new List<Killer>();
         static void Main(string[] args)
         {
             // Killer objekt/klass
@@ -22,6 +21,7 @@ namespace AndresAnsikte
                 switch (choice)
                 {
                     case 1:
+                        // Skriv över gamla vektorn
                         murder = AddKiller(murder);
                         break;
                     case 2:
@@ -38,6 +38,7 @@ namespace AndresAnsikte
         private static void ShowKillers(Killer[] murder)
         {
             Console.WriteLine("Displaying all added killers.");
+            //Skriv ut alla Killers
             foreach (Killer killer in murder)
             {
                 Console.WriteLine(killer.name + " is serving " + killer.years + " years in " + killer.jail);
@@ -47,31 +48,34 @@ namespace AndresAnsikte
 
         private static Killer[] AddKiller(Killer[] murder)
         {
+            // Skriv in all info
             Console.Write("Enter the name: ");
             string name = Console.ReadLine();
             Console.Write("Enter sentenced years: ");
             int years = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter name of prison: ");
             string jail = Console.ReadLine();
-
+            // skapa ny Killer
             Killer newValue = new Killer();
             newValue.name = name;
             newValue.years = years;
             newValue.jail = jail;
-
+            // Lagra int med längden på gamla vektorn
             int newLength = murder.Length + 1;
-
+            // Skapa ny vektor med nya längden
             Killer[] result = new Killer[newLength];
-
+            // Kopiera in gamla vektorn till den nya
             for (int i = 0; i < murder.Length; i++)
             {
                 result[i] = murder[i];
             }
 
-
+            // Lägg till nya killern i nya vektorn
             result[newLength - 1] = newValue;
+            // Om man vill lägga till mer
             Console.WriteLine("Lägg till mer?");
             string svar = Console.ReadLine();
+            // Skapa ny killer och vektor av killers
             Killer newValue1 = new Killer();
             Killer[] result1;
             while (svar == "Ja" || svar == "ja")
@@ -82,6 +86,7 @@ namespace AndresAnsikte
                 int years1 = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Enter name of prison: ");
                 string jail1 = Console.ReadLine();
+                // Samma kod som tidigare 
                 newValue1 = new Killer();
                 newValue1.name = name1;
                 newValue1.years = years1;
@@ -96,11 +101,12 @@ namespace AndresAnsikte
                     result1[i] = result[i];
                 }
                 result1[newLength1 - 1] = newValue1;
+                // Skriv över result
                 result = result1;
                 Console.WriteLine("Lägg till mer?");
                 svar = Console.ReadLine();
             }
-
+            // Returnera result
             return result;
 
         }
