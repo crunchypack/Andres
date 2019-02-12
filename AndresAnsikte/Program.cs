@@ -15,7 +15,7 @@ namespace AndresAnsikte
             Killer[] murder = new Killer[0];
             Console.WriteLine("1. Add killer\n2. Show all killers\n3. Exit");
             Console.Write("Choose function by inserting corresponding number: ");
-            
+
             int choice = Convert.ToInt32(Console.ReadLine());
             while (choice != 3)
             {
@@ -30,7 +30,7 @@ namespace AndresAnsikte
                 }
                 Console.WriteLine("1. Add killer\n2. Show all killers\n3. Exit ");
                 Console.Write("Choose function by inserting corresponding number: ");
-                
+
                 choice = Convert.ToInt32(Console.ReadLine());
             }
         }
@@ -52,13 +52,13 @@ namespace AndresAnsikte
             Console.Write("Enter sentenced years: ");
             int years = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter name of prison: ");
-            string jail = Console.ReadLine();       
-            
+            string jail = Console.ReadLine();
+
             Killer newValue = new Killer();
             newValue.name = name;
             newValue.years = years;
             newValue.jail = jail;
-            
+
             int newLength = murder.Length + 1;
 
             Killer[] result = new Killer[newLength];
@@ -67,14 +67,14 @@ namespace AndresAnsikte
             {
                 result[i] = murder[i];
             }
-                
+
 
             result[newLength - 1] = newValue;
             Console.WriteLine("Lägg till mer?");
             string svar = Console.ReadLine();
             Killer newValue1 = new Killer();
             Killer[] result1;
-            while (svar == "Ja"||svar == "ja")
+            while (svar == "Ja" || svar == "ja")
             {
                 Console.Write("Enter the name: ");
                 string name1 = Console.ReadLine();
@@ -102,7 +102,7 @@ namespace AndresAnsikte
             }
 
             return result;
-         
+
         }
     }
 }
