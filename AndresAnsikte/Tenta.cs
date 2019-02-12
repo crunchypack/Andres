@@ -12,11 +12,21 @@ namespace AndresAnsikte
         public int years;
         public string jail;
         
+        public Killer()
+        {
+
+        }
         public Killer(string name, int years, string jail)
         {
             this.name = name;
             this.years = years;
             this.jail = jail;
+        }
+        public int YearsLeft()
+        {
+            int y = 2019;
+            int r = y + this.years;
+            return r;
         }
 
     }
